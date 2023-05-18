@@ -8,7 +8,7 @@ public class TelegramBot {
 
     public static void main(String[] args) {
         try {
-            SpringApplication.run(TelegramBotApi.class, args);
+            SpringApplication.run(TelegramBot.class, args);
         } catch (Exception e) {
             e.printStackTrace();
         }

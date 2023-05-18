@@ -27,8 +27,6 @@ public class Telebot extends TelegramLongPollingBot {
     @Override
     public void onUpdateReceived(Update update) {
 
-        System.out.println("Got an update!" + update);
-
         if (update.hasMessage()) {
             var msg = update.getMessage();
             var chatId = String.valueOf(msg.getChatId());
@@ -64,7 +62,6 @@ public class Telebot extends TelegramLongPollingBot {
 
     @Override
     public void onRegister() {
-        System.out.println("-------> Bot has been registered!");
         super.onRegister();
     }
 
@@ -77,9 +74,7 @@ public class Telebot extends TelegramLongPollingBot {
     public void start() {
         try {
             TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
-            System.out.println("Starting auto config for telegram bot: name = " + botName + ", token = " + botToken);
             botsApi.registerBot(this);
-            System.out.println("Telegram bot has been registered!");
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }

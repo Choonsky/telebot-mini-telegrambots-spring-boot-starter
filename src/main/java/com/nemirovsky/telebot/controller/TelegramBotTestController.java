@@ -5,12 +5,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/test/**")
 public class TelegramBotTestController {
 
-    @GetMapping("test/**")
+    @GetMapping
     public String getTestMessage() {
 
-        return "This is a Telegram Bot API service response test message!";
+        return "This is a Telegram Bot service response test message!";
     }
 }
